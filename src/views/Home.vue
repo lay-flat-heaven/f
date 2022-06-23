@@ -6,7 +6,8 @@
                 <intro></intro>
             </el-main>
             <el-main>
-                <input-img></input-img>
+                aaa
+                <upload></upload>
             </el-main>
             <el-footer>Footer</el-footer>
         </el-container>
@@ -19,12 +20,14 @@
 import Intro from '@/components/Intro.vue'
 import NavBar from '@/components/NavBar.vue'
 import InputImg from '@/components/InputImg.vue'
+import Upload from '@/components/Upload.vue'
 export default {
     name: 'Home',
     components: {
         NavBar,
         Intro,
-        InputImg
+        InputImg,
+        Upload
     }
 }
 </script>
