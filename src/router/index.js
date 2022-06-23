@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 export const constantRoutes = [
     {
         path: '/',
-        component: () => import('@/components/NavBar.vue'),
+        component: () => import('@/views/Home.vue'),
         meta: {
             title: 'main page'
         }

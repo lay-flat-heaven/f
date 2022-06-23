@@ -1,22 +1,33 @@
 <template>
-  <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-    background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-    <el-menu-item index="1">处理中心</el-menu-item>
-    <el-submenu index="2">
-      <el-menu-item index="2-1">选项1</el-menu-item>
-      <el-menu-item index="2-2">选项2</el-menu-item>
-      <el-menu-item index="2-3">选项3</el-menu-item>
-      <el-submenu index="2-4">
-        <el-menu-item index="2-4-1">选项1</el-menu-item>
-        <el-menu-item index="2-4-2">选项2</el-menu-item>
-        <el-menu-item index="2-4-3">选项3</el-menu-item>
-      </el-submenu>
-    </el-submenu>
-    <el-menu-item index="3" disabled>消息中心</el-menu-item>
-    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-  </el-menu>
-
+  <div class="nav-box">
+    <div class="nav-body">
+      <div class="drop-list">
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            Dropdown List
+            <el-icon class="el-icon--right">
+              <arrow-down />
+            </el-icon>
+          </span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>Action 1</el-dropdown-item>
+              <el-dropdown-item>Action 2</el-dropdown-item>
+              <el-dropdown-item>Action 3</el-dropdown-item>
+              <el-dropdown-item disabled>Action 4</el-dropdown-item>
+              <el-dropdown-item divided>Action 5</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
+      <div class="sign-login">
+        aaa
+      </div>
+      <div class="icon-name">icon name</div>
+    </div>
+  </div>
 </template>
+
 
 <script>
 export default {
@@ -34,3 +45,49 @@ export default {
   }
 }
 </script>
+
+<style>
+.nav-body {
+  width: 100%;
+  height: 71.5px;
+  position: fixed;
+  background-image:linear-gradient(260deg,#202020,#3a3a3a);
+  background-repeat: repeat-x;
+}
+
+.drop-list {
+  display: inline;
+  background-color: black;
+  position: relative;
+  left: -100px;
+  top: 35px;
+}
+
+.nav-box {
+  width: 100%;
+  height: 71.5px;
+}
+
+.flex-grow1 {
+  flex-grow: 0.3;
+}
+
+.flex-grow2 {
+  flex-grow: 0.05;
+}
+
+.sign-login {
+  display: inline;
+  background-color: black;
+  position: relative;
+  left:500px;
+  top:35px
+}
+.icon-name{
+  display: inline;
+  background-color: black;
+  position: relative;
+  left:-710px;
+  top:35px;
+}
+</style>
