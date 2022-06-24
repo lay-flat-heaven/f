@@ -39,7 +39,8 @@ export default {
    data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        kk:0
       };
     },
     methods: {
