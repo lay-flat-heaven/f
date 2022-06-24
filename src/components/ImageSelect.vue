@@ -2,7 +2,9 @@
     <div class="block">
         <el-image style="width: 360px; height: 360px" :src="valueUrl" :fit="fill" :preview-src-list="srcList">
         </el-image>
-        <el-button @click="getImg">upload</el-button>
+        <div>
+            <el-button @click="getImg">select</el-button>
+        </div>
     </div>
 </template>
 <script>
@@ -47,11 +49,11 @@ export default {
                 const that = this;
                 const reader = new FileReader();
                 reader.readAsDataURL(el.target.files[0]);
-                reader.onload =  (e) => {
-                    console.log(e.target.result)
+                reader.onload = (e) => {
                     let tmpfile = e.target.result
                     that.srcList.push(tmpfile)
                     that.valueUrl = tmpfile
+                    that.transUrl()
                 };
             }
         },
@@ -66,6 +68,9 @@ export default {
                 inputElement = null
                 console.log('destroy')
             }
+        },
+        transUrl(){
+            this.$emit("transUrl",this.valueUrl)
         }
 
     },

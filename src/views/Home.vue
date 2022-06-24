@@ -6,7 +6,7 @@
                 <intro></intro>
             </el-main>
             <el-main class="img">
-                <image-upload></image-upload>
+                <feat></feat>
             </el-main>
             <el-footer>Footer</el-footer>
         </el-container>
@@ -18,13 +18,13 @@
 
 import Intro from '@/components/Intro.vue'
 import NavBar from '@/components/NavBar.vue'
-import ImageUpload from '@/components/ImageUpload'
+import Feat from '@/components/Feat.vue'
 export default {
     name: 'Home',
     components: {
         NavBar,
         Intro,
-        ImageUpload
+        Feat
     }
 }
 </script>
@@ -35,6 +35,7 @@ export default {
     height: 265.5px;
 
 }
+
 .el-main.img {
     padding: 0px;
     height: 600px;
