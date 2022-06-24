@@ -2,12 +2,11 @@
     <nav-bar></nav-bar>
     <div class="common-layout">
         <el-container>
-            <el-main>
+            <el-main class="des">
                 <intro></intro>
             </el-main>
-            <el-main>
-                aaa
-                <upload></upload>
+            <el-main class="img">
+                <image-upload></image-upload>
             </el-main>
             <el-footer>Footer</el-footer>
         </el-container>
@@ -19,23 +18,26 @@
 
 import Intro from '@/components/Intro.vue'
 import NavBar from '@/components/NavBar.vue'
-import InputImg from '@/components/InputImg.vue'
-import Upload from '@/components/Upload.vue'
+import ImageUpload from '@/components/ImageUpload'
 export default {
     name: 'Home',
     components: {
         NavBar,
         Intro,
-        InputImg,
-        Upload
+        ImageUpload
     }
 }
 </script>
 
 <style>
-.el-main {
+.el-main.des {
     padding: 0px;
     height: 265.5px;
+
+}
+.el-main.img {
+    padding: 0px;
+    height: 600px;
 
 }
 
