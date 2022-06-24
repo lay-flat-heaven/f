@@ -1,6 +1,8 @@
 <template>
-    <div class="block" @click="getImg">
-        <el-image style="width: 360px; height: 360px" :src="valueUrl" :fit="fill"></el-image>
+    <div class="block">
+        <el-image style="width: 360px; height: 360px" :src="valueUrl" :fit="fill" :preview-src-list="srcList">
+        </el-image>
+        <el-button @click="getImg">upload</el-button>
     </div>
 </template>
 <script>
@@ -10,7 +12,10 @@ export default {
     data() {
         return {
             fits: ['fill'],
-            valueUrl: ''
+            valueUrl: '',
+            srcList: [
+
+            ]
         }
     },
     methods: {
@@ -37,23 +42,17 @@ export default {
             if (el && el.target && el.target.files && el.target.files.length > 0) {
                 console.log(el)
                 const files = el.target.files[0]
-                const isLt2M = files.size / 1024 / 1024 < 2
-                const size = files.size / 1024 / 1024
-                console.log(size)
+                console.log(files)
 
-                if (!isLt2M) {
-                    this.$message.error('lagre')
-                } else if (files.type.indexOf('image') === -1) {
-                    this.$message.error('plz select');
-                } else {
-                    const that = this;
-                    const reader = new FileReader(); 
-                    reader.readAsDataURL(el.target.files[0]); 
-                    reader.onload = function () { 
-                        that.valueUrl = this.result;
-                        console.log(this.result);
-                    };
-                }
+                const that = this;
+                const reader = new FileReader();
+                reader.readAsDataURL(el.target.files[0]);
+                reader.onload =  (e) => {
+                    console.log(e.target.result)
+                    let tmpfile = e.target.result
+                    that.srcList.push(tmpfile)
+                    that.valueUrl = tmpfile
+                };
             }
         },
         beforeDestroy() {
