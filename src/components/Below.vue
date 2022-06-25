@@ -1,5 +1,5 @@
 <template>
-    <el-row class="down-row footer" :gutter="0">
+    <el-row class="down-row-footer" :gutter="0">
         <el-col :xs="0" :sm="8" :md="8" :lg="16" :xl="8">
             <div class="container1">
                 <div class="component1" style="line-height:2.5em;">
@@ -56,7 +56,7 @@ export default {
 </script>
 <style>
 .down-row-footer{
-    min-height: 200px;
+    min-height: 150px;
 }
 .text {
     position: relative;

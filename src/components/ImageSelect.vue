@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-        <el-image style="width: 360px; height: 360px" :src="valueUrl" :fit="fill" :preview-src-list="srcList">
+        <el-image style="width:360px;height:360px" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
             <el-button @click="getImg">select</el-button>
@@ -8,12 +8,11 @@
     </div>
 </template>
 <script>
-let inputElement = null
 export default {
     name: 'ImageUpload',
     data() {
         return {
-            fits: ['fill'],
+            fits: ['contain'],
             valueUrl: '',
             srcList: [
 
@@ -23,6 +22,8 @@ export default {
     methods: {
         getImg() {
             console.log("click")
+            // inputelement cant be global 
+            let inputElement = null
             if (inputElement === null) {
                 inputElement = document.createElement('input')
                 inputElement.setAttribute('type', 'file')
