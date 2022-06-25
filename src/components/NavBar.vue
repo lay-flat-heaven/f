@@ -1,13 +1,16 @@
 <template>
   <el-row class="nav-bar-row" :gutter="0">
-    <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
-      <div class="icon-name">icon here</div>
+    <el-col :xs="12" :sm="8" :md="4" :lg="3" :xl="8">
     </el-col>
-    <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
+    <el-col :xs="12" :sm="8" :md="3" :lg="3" :xl="8">
+      <div class="icon-name1">Futu</div>
+      <div class="icon-name2">rama</div>
+    </el-col>
+    <el-col :xs="0" :sm="8" :md="3" :lg="3" :xl="8">
       <div class="drop-list">
         <el-dropdown>
           <span class="el-dropdown-link">
-            Dropdown List
+            Dropdown List▾
             <el-icon class="el-icon--right">
               <arrow-down />
             </el-icon>
@@ -23,6 +26,8 @@
           </template>
         </el-dropdown>
       </div>
+    </el-col>
+    <el-col :xs="12" :sm="8" :md="4" :lg="6" :xl="8">
     </el-col>
     <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
       <div class="sign-login">sign-login</div>
@@ -50,8 +55,8 @@ export default {
 
 <style>
 .nav-bar-row {
-  background-color: gray;
-  min-height: 85px;
+  background-color: rgb(40, 40, 40);
+  min-height: 75px;
 }
 
 .drop-list-col {
@@ -68,11 +73,9 @@ export default {
 }
 
 .drop-list {
-  width: 50%;
-  background-color: black;
-
+  width: 100%;
   position: relative;
-  top: 35px;
+  top: 30px;
 }
 
 .nav-box {
@@ -81,21 +84,44 @@ export default {
 }
 
 .sign-login {
-  width: 50%;
-  background-color: black;
   position: relative;
-  top: 35px
+  width:100%;
+  color: #edeeef;
+  font-size: 17px;
+  top:28px;
 }
 
-.icon-name {
+.icon-name1 {
   width: 50%;
-  background-color: black;
   position: relative;
-  top: 35px;
+  display: inline;
+  color: #edeeef;
+  letter-spacing: 2px;
+  font-size: 25px;
+  font-weight: 100;
+  top: 22px;
+}
+
+.icon-name2 {
+  width: 50%;
+  position: relative;
+  display: inline;
+  color: #edeeef;
+  letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: bold;
+  top: 22px;
 }
 
 .el-col {
   border-radius: 4px;
+}
+
+.el-dropdown-link {
+  position:relative;
+  width:100%;
+  color: #edeeef;
+  font-size: 17px;
 }
 
 .bg-purple-dark {
