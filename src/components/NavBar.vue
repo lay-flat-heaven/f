@@ -1,6 +1,9 @@
 <template>
-  <div class="nav-box">
-    <div class="nav-body">
+  <el-row class="nav-bar-row" :gutter="0">
+    <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+      <div class="icon-name">icon here</div>
+    </el-col>
+    <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
       <div class="drop-list">
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -20,12 +23,11 @@
           </template>
         </el-dropdown>
       </div>
-      <div class="sign-login">
-        aaa
-      </div>
-      <div class="icon-name">icon name</div>
-    </div>
-  </div>
+    </el-col>
+    <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+      <div class="sign-login">sign-login</div>
+    </el-col>
+  </el-row>
 </template>
 
 
@@ -47,19 +49,29 @@ export default {
 </script>
 
 <style>
+.nav-bar-row {
+  background-color: gray;
+  min-height: 85px;
+}
+
+.drop-list-col {
+  background-color: gray;
+}
+
 .nav-body {
   width: 100%;
   height: 71.5px;
   position: fixed;
-  background-image:linear-gradient(260deg,#202020,#3a3a3a);
+  z-index: 5;
+  background-image: linear-gradient(260deg, #202020, #3a3a3a);
   background-repeat: repeat-x;
 }
 
 .drop-list {
-  display: inline;
+  width: 50%;
   background-color: black;
+
   position: relative;
-  left: -100px;
   top: 35px;
 }
 
@@ -68,26 +80,33 @@ export default {
   height: 71.5px;
 }
 
-.flex-grow1 {
-  flex-grow: 0.3;
-}
-
-.flex-grow2 {
-  flex-grow: 0.05;
-}
-
 .sign-login {
-  display: inline;
+  width: 50%;
   background-color: black;
   position: relative;
-  left:500px;
-  top:35px
+  top: 35px
 }
-.icon-name{
-  display: inline;
+
+.icon-name {
+  width: 50%;
   background-color: black;
   position: relative;
-  left:-710px;
-  top:35px;
+  top: 35px;
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+.bg-purple-dark {
+  background: #99a9bf;
+}
+
+.bg-purple {
+  background: #d3dce6;
+}
+
+.bg-purple-light {
+  background: #e5e9f2;
 }
 </style>

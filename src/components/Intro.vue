@@ -1,9 +1,11 @@
 <template>
-    <div class="intro">
-        <div class="description">aa
-
-        </div>
-    </div>
+    <el-row class="intro-row" :gutter="0">
+        <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+            <div class="description">aa</div>
+        </el-col>
+        <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
+        </el-col>
+    </el-row>
 </template>
 
 <script>
@@ -17,20 +19,19 @@ export default {
 </script>
 
 <style>
-.intro {
-    height: 100%;
-    width: 100%;
+.intro-row {
+    min-height: 260px;
     background-image: linear-gradient(260deg, #202020, #3a3a3a);
     background-repeat: repeat-x;
 }
-.description{
+
+.description {
     display: inline-block;
     background-color: white;
     position: relative;
-    left: -475px;
-    top:25px;
-    height: 200px;
-    width: 390px;
+    top: 20px;
+    height: 75%;
+    width: 90%;
 
 
 }
