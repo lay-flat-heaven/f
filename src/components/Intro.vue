@@ -42,5 +42,4 @@ export default {
     color:#edeeef;
     font-size: 30px;
 }
-.content{}
 </style>

@@ -5,16 +5,18 @@
 <script>
 import Fun from '@/components/Fun.vue'
 import Start from '@/components/Start.vue'
+import Crop from '@/components/Crop.vue'
 export default {
     name: 'Feat',
     data() {
         return {
-            current:Start
+            current:Fun
         }
     },
     components: {
         Fun,
-        Start
+        Start,
+        Crop
     }
 
 }

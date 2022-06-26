@@ -4,22 +4,39 @@
         </el-image>
         <div>
             <el-button @click="getImg">select</el-button>
+            <el-button @click="setCropperVisible(true)">crop</el-button>
+            <el-dialog
+            title="aaa"
+            v-model="cropperVisible">
+                <crop></crop>
+            </el-dialog>
         </div>
     </div>
 </template>
 <script>
+
+import Crop from '@/components/Crop.vue'
 export default {
     name: 'ImageUpload',
+    components: {
+        Crop
+    },
     data() {
         return {
             fits: ['contain'],
             valueUrl: '',
             srcList: [
 
-            ]
+            ],
+            cropperVisible: false
         }
     },
     methods: {
+        setCropperVisible(ok) {
+            this.cropperVisible = ok
+            console.log(ok)
+
+        },
         getImg() {
             console.log("click")
             // inputelement cant be global 
@@ -70,8 +87,8 @@ export default {
                 console.log('destroy')
             }
         },
-        transUrl(){
-            this.$emit("transUrl",this.valueUrl)
+        transUrl() {
+            this.$emit("transUrl", this.valueUrl)
         }
 
     },

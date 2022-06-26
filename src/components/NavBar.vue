@@ -1,8 +1,8 @@
 <template>
   <el-row class="nav-bar-row" :gutter="0">
-    <el-col :xs="12" :sm="8" :md="4" :lg="3" :xl="8">
+    <el-col :xs="0" :sm="8" :md="4" :lg="3" :xl="8">
     </el-col>
-    <el-col :xs="12" :sm="8" :md="3" :lg="3" :xl="8">
+    <el-col :xs="24" :sm="8" :md="3" :lg="3" :xl="8">
       <div class="icon-name1">Futu</div>
       <div class="icon-name2">rama</div>
     </el-col>
@@ -27,9 +27,9 @@
         </el-dropdown>
       </div>
     </el-col>
-    <el-col :xs="12" :sm="8" :md="4" :lg="6" :xl="8">
+    <el-col :xs="0" :sm="8" :md="4" :lg="6" :xl="8">
     </el-col>
-    <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+    <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
       <div class="sign-login">sign-login</div>
     </el-col>
   </el-row>
