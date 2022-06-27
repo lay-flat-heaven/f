@@ -3,12 +3,10 @@
         <el-image style="width:360px;height:360px" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
-            <el-button @click="getImg">select</el-button>
-            <el-button @click="setCropperVisible(true)">crop</el-button>
-            <el-dialog
-            title="aaa"
-            v-model="cropperVisible">
-                <crop></crop>
+            <el-button @click="setCropperVisible(true)">select</el-button>
+            <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
+            <el-dialog title="aaa" v-model="cropperVisible">
+                <crop @transCut="getUrl"></crop>
             </el-dialog>
         </div>
     </div>
@@ -89,6 +87,11 @@ export default {
         },
         transUrl() {
             this.$emit("transUrl", this.valueUrl)
+        },
+        getUrl(url){
+            console.log("img select get url",url)
+            this.srcList.push(url)
+            this.valueUrl = url
         }
 
     },

@@ -15,28 +15,26 @@
             <!--底部操作工具按钮-->
             <div class="footer-btn">
                 <div class="scope-btn">
-                    <label class="btn" for="uploads">选择封面</label>
-                    <input type="file" id="uploads" style="position:absolute; clip:rect(0 0 0 0);"
-                        accept="image/png, image/jpeg, image/gif, image/jpg" @change="selectImg($event)">
+                    <el-button @click="getImg">select</el-button>
                     <el-button size="mini" type="danger" plain icon="el-icon-zoom-in" @click="changeScale(1)">放大
                     </el-button>
                     <el-button size="mini" type="danger" plain icon="el-icon-zoom-out" @click="changeScale(-1)">缩小
                     </el-button>
-                    <el-button size="mini" type="danger" plain @click="rotateLeft">↺ 左旋转</el-button>
-                    <el-button size="mini" type="danger" plain @click="rotateRight">↻ 右旋转</el-button>
+                    <el-button size="mini" type="danger" plain @click="rotateLeft">↺ </el-button>
+                    <el-button size="mini" type="danger" plain @click="rotateRight">↻ </el-button>
                 </div>
                 <div class="upload-btn">
-                    <el-button size="mini" type="success" @click="uploadImg('blob')">上传封面 <i class="el-icon-upload"></i>
+                    <el-button size="mini" type="success" @click="confirm">confirm <i class="el-icon-upload"></i>
                     </el-button>
                 </div>
             </div>
         </div>
         <!--预览效果图-->
-        <div class="show-preview">
+        <!-- <div class="show-preview">
             <div :style="previews.div" class="preview">
                 <img :src="previews.url" :style="previews.img">
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -52,6 +50,7 @@ export default {
         return {
             name: this.Name,
             previews: {},
+            url: '',
             option: {
                 img: '',             //裁剪图片的地址
                 outputSize: 1,       //裁剪生成图片的质量(可选0.1 - 1)
@@ -62,7 +61,7 @@ export default {
                 autoCropWidth: 230,  //默认生成截图框宽度
                 autoCropHeight: 150, //默认生成截图框高度
                 fixed: true,         //是否开启截图框宽高固定比例
-                fixedNumber: [1.53, 1], //截图框的宽高比例
+                fixedNumber: [3, 4], //截图框的宽高比例
                 full: false,         //false按原比例裁切图片，不失真
                 fixedBox: true,      //固定截图框大小，不允许改变
                 canMove: false,      //上传图片是否可以移动
@@ -119,7 +118,10 @@ export default {
                     data = e.target.result
                 }
                 this.option.img = data
+                console.log("crop img", this.option.img)
+
             }
+
             //转化为base64
             reader.readAsDataURL(file)
         },
@@ -146,12 +148,43 @@ export default {
                         _this.$emit('uploadImgSuccess', imgInfo);
                     } else {
                         _this.$message({
-                            message: '文件服务异常，请联系管理员！',
+                            message: '异常',
                             type: "error"
                         });
                     }
                 })
             }
+        },
+
+        confirm() {
+            this.$refs.cropper.getCropBlob((data) => {
+
+                let img = window.URL.createObjectURL(data)
+                console.log("confirm", img)
+                this.$emit("transCut", img)
+
+            })
+
+        },
+        getImg() {
+            console.log("click")
+            let inputElement = null
+            if (inputElement === null) {
+                inputElement = document.createElement('input')
+                inputElement.setAttribute('type', 'file')
+                inputElement.style.display = 'none'
+
+                if (window.addEventListener) {
+                    inputElement.addEventListener('change', this.selectImg, false)
+                } else {
+                    inputElement.attachEvent('onchange', this.selectImg)
+                }
+
+                document.body.appendChild(inputElement)
+            }
+            inputElement.click()
+
+
         },
     },
 }
