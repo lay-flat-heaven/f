@@ -1,5 +1,18 @@
-<template>
+<!-- <template>
     <component :is="current"></component>
+</template> -->
+<template>
+    <el-carousel 
+    indicator-position="none" 
+    height="500px"
+    ref="carousel"
+    :arrow="CarouselOption.isArrow" 
+    :autoplay="CarouselOption.isAuto" 
+    :loop="CarouselOption.isLoop">
+        <el-carousel-item v-for="item in componentList" :key="item" :name="item.name">
+            <component :is="item" @switch="switchTo"></component>
+        </el-carousel-item>
+    </el-carousel>
 </template>
 
 <script>
@@ -10,13 +23,27 @@ export default {
     name: 'Feat',
     data() {
         return {
-            current:Fun
+            current: Start,
+            componentList:[
+                Start,
+                Fun
+            ],
+            CarouselOption:{
+                isLoop:false,
+                isAuto:false,
+                isArrow:'never',
+            }
         }
     },
     components: {
         Fun,
         Start,
         Crop
+    },
+    methods:{
+        switchTo(name){
+            this.$refs.carousel.setActiveItem(name)
+        }
     }
 
 }

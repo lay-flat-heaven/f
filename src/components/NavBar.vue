@@ -12,7 +12,7 @@
           <span class="el-dropdown-link">
             Dropdown List▾
             <el-icon class="el-icon--right">
-              <arrow-down />
+              <!-- <arrow-down /> -->
             </el-icon>
           </span>
           <template #dropdown>
