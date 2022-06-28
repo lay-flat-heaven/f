@@ -1,6 +1,6 @@
 <template>
     <el-row :gutter="0" class="start-row">
-        <el-button @click="switchToMainFun">START!!!!!!!!!!!!</el-button>
+        <el-button @click="switchToMainFun">START</el-button>
     </el-row>
 </template>
 
