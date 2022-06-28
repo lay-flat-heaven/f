@@ -31,7 +31,7 @@ export default {
             CarouselOption:{
                 isLoop:false,
                 isAuto:false,
-                isArrow:'never',
+                isArrow:'always',
             }
         }
     },

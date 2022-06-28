@@ -9,7 +9,7 @@
     </el-row>
     <el-row class="upload-row">
         <div class="upload-button">
-            <upload-button :url1="aboveurl1" :url2="aboveurl2"></upload-button>
+            <upload-button :url1="aboveurl1" :url2="aboveurl2">hhh</upload-button>
         </div>
     </el-row>
 </template>

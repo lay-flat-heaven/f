@@ -99,7 +99,7 @@ export default {
   letter-spacing: 2px;
   font-size: 25px;
   font-weight: 100;
-  top: 22px;
+  top: 25px;
 }
 
 .icon-name2 {
@@ -110,7 +110,7 @@ export default {
   letter-spacing: 1px;
   font-size: 25px;
   font-weight: bold;
-  top: 22px;
+  top: 25px;
 }
 
 .el-col {
