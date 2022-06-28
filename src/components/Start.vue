@@ -1,7 +1,7 @@
 <template>
     <el-row :gutter="0" class="start-row">
             <el-button @click="switchToMainFun" class="start-button">
-               START &nbsp&nbsp▶
+               START &nbsp&nbspaaa▶
             </el-button>
     </el-row>
 </template>
