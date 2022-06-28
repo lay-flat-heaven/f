@@ -1,5 +1,5 @@
 <template>
-    <button @click="upload"></button>
+    <el-button @click="upload"></el-button>
 </template>
 
 <script>

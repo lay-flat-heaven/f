@@ -45,7 +45,7 @@ export default {
 <style>
 .select-row{
     background-color: aqua ;
-    min-height: 500px;
+    min-height: 350px;
 }
 .upload-row{
     background-color: yellow ;
