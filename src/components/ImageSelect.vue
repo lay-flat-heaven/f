@@ -1,9 +1,9 @@
 <template>
     <div class="block">
-        <el-image style="width:360px;height:360px" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
+        <el-image style="width:240px;height:320px;" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
-            <el-button @click="setCropperVisible(true)">select</el-button>
+            <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
             <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
             <el-dialog title="aaa" v-model="cropperVisible">
                 <crop @transCut="getUrl"></crop>
@@ -100,7 +100,20 @@ export default {
 
 </script>
 <style>
+.selectbutton{
+    font-size: larger;
+    background-color:rgb(181,56,54);
+    color:white;
+    width: 100%;
+    height: 50px;
+}
+.selectbutton:hover{
+    background-color:rgb(152,47,45);
+    color: white;
+}
 .block {
+    position: relative;
+    top: 40px;
     display: inline-block;
 }
 </style>

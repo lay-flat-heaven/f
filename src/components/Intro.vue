@@ -3,9 +3,9 @@
         <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
             <div class="description">
                 <p class="title">Introduction</p>
-                <p class="content">☆*: .｡. o(≧▽≦)o .｡.:*☆</p>
-                <p class="content">劈里啪啦摩西摩西</p>
-                <p class="content">哇卡大坑大褂</p>
+                <p class="content">☆*: .｡. o(≧▽≦)o .｡.:*☆ (╯°□°）╯︵ ┻━┻( ´･･)ﾉ(._.`)(^///^)</p>
+                <p class="content">劈里啪啦摩西摩西(*/ω＼*)(❁´◡`❁)</p>
+                <p class="content">哇卡大坑大褂(╯°□°）╯︵ ┻━┻</p>
                 <p class="content">巴啦啦能量</p>
             </div>
         </el-col>
@@ -26,7 +26,7 @@ export default {
 
 <style>
 .intro-row {
-    min-height: 260px;
+    min-height: 200px;
     background-image: linear-gradient(260deg, #616161, #212020);
     background-repeat: repeat-x;
 }
@@ -44,10 +44,10 @@ export default {
 }
 .title{
     top:0;
-    color:#edeeef;
+    color:white;
     font-size: 30px;
 }
 .content{
-    color:#edeeef;
+    color:white;
 }
 </style>

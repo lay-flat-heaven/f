@@ -4,7 +4,7 @@
 <template>
     <el-carousel 
     indicator-position="none" 
-    height="700px"
+    height="800px"
     ref="carousel"
     :arrow="CarouselOption.isArrow" 
     :autoplay="CarouselOption.isAuto" 

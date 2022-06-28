@@ -1,17 +1,18 @@
 <template>
     <el-row class="select-row" :gutter="0">
-        <el-col :span="12">
+        <el-col :span="9">
             <image-select @transUrl="setUrl1"></image-select>
         </el-col>
-        <el-col :span="12">
+        <el-col :span="6"></el-col>
+        <el-col :span="9">
             <image-select @transUrl="setUrl2"></image-select>
         </el-col>
     </el-row>
-    <el-row class="upload-row">
+    <!-- <el-row class="upload-row">
         <div class="upload-button">
-            <upload-button :url1="aboveurl1" :url2="aboveurl2">hhh</upload-button>
+            <upload-button :url1="aboveurl1" :url2="aboveurl2"></upload-button>
         </div>
-    </el-row>
+    </el-row> -->
 </template>
 
 <script>
@@ -44,8 +45,8 @@ export default {
 
 <style>
 .select-row{
-    background-color: aqua ;
-    min-height: 350px;
+    background-color: rgb(230, 228, 228) ;
+    min-height: 800px;
 }
 .upload-row{
     background-color: yellow ;
