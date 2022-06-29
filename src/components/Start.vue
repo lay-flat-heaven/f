@@ -7,8 +7,11 @@
     <el-row class="illustrate">
         <el-col :span="12">
             <div class="part1">
-                <p class="step">step1</p>
-                (❁´◡`❁)(^///^)( ´･･)ﾉ(._.`)( ´･･)ﾉ(._.`)ᓚᘏᗢᓚᘏᗢ╰(*°▽°*)╯(●'◡'●)ಥ_ಥ╰(*°▽°*)╯
+                <p class="step">
+                    <img src="../assets/picture1.png" class="picture1">
+                    &nbsp&nbsp&nbspstep1
+                </p>
+                <p class="stepcontent">select pictures of model and cloth in your device which meets the requirements to apply them</p>
             </div>
             <div class="part2">
                 HelloWorldnsf📄📄
@@ -42,6 +45,12 @@ export default {
 </script>
 
 <style>
+.picture1{
+    width:25px;
+    height:25px;
+    position:relative;
+    top: 5px;
+}
 .part1{
     background-color: rgb(255, 255, 255);
     box-shadow:0 0px 1px 0 rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.19);
@@ -51,8 +60,21 @@ export default {
     height: 30%;
 }
 .step{
-    font-size: 30px;
+    position: relative;
+    text-align: left;
+    font-size: 25px;
+    height: 5px;
+    color: rgb(90, 90, 90);
+    top: 20px;
+    left: 30px;
     font-weight:bolder;
+}
+.stepcontent{
+    position: relative;
+    font-weight: 100;
+    text-align: left;
+    font-size: 20px;
+    top: 25px;
 }
 .part2{
     position: relative;
