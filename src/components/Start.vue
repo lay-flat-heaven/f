@@ -7,7 +7,7 @@
     <el-row class="illustrate">
         <el-col :span="12">
             <div class="part1">
-                component1
+                <p class="step">step1</p>
                 (❁´◡`❁)(^///^)( ´･･)ﾉ(._.`)( ´･･)ﾉ(._.`)ᓚᘏᗢᓚᘏᗢ╰(*°▽°*)╯(●'◡'●)ಥ_ಥ╰(*°▽°*)╯
             </div>
             <div class="part2">
@@ -16,7 +16,7 @@
         </el-col>
         <el-col :span="12">
             <div class="part1">
-                component2
+                <p class="step">step2</p>
                 φ(*￣0￣)( •̀ ω •́ )✧(～￣▽￣)(～￣▽￣)～（￣︶￣）↗　(￣︶￣)↗[GO!][]~(￣▽￣)~*
             </div>
             <div class="part2">
@@ -46,9 +46,13 @@ export default {
     background-color: rgb(255, 255, 255);
     box-shadow:0 0px 1px 0 rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.19);
     margin: 0 auto;
-    top:10px;
+    border-radius:5px;
     width: 80%;
     height: 30%;
+}
+.step{
+    font-size: 30px;
+    font-weight:bolder;
 }
 .part2{
     position: relative;
@@ -73,7 +77,7 @@ export default {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: 25px;
+    top: 35px;
     height: 50px;
     width: 200px;
     font-size: larger;

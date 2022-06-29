@@ -1,12 +1,16 @@
 <template>
     <el-row class="intro-row" :gutter="0">
-        <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
+        <el-col :xs="24" :sm="15" :md="20" :lg="15" :xl="15">
             <div class="description">
-                <p class="title">Introduction</p>
-                <p class="content">☆*: .｡. o(≧▽≦)o .｡.:*☆ (╯°□°）╯︵ ┻━┻( ´･･)ﾉ(._.`)(^///^)</p>
-                <p class="content">劈里啪啦摩西摩西(*/ω＼*)(❁´◡`❁)</p>
-                <p class="content">哇卡大坑大褂(╯°□°）╯︵ ┻━┻</p>
-                <p class="content">巴啦啦能量</p>
+                <h1 class="title">Introduction</h1>
+                <p class="content">
+                Futurama is a online platform for 
+                all to virtually try-on with images of cloths and models 
+                With a neo-invented 
+                and well-designed Deep Neural Networks ,
+                it's Futurama that offer anyone an easy-going solution
+                to try clothes on virtually .
+                </p>
             </div>
         </el-col>
         <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
@@ -35,12 +39,11 @@ export default {
     display: inline-block;
     position: relative;
     line-height: 1.5px;
-    /*background-color: rgb(36, 107, 169);*/
     text-align: left;
     left:150px;
     top: 20px;
     height: 75%;
-    width: 90%;
+    width: 100%;
 }
 .title{
     top:0;
@@ -48,6 +51,10 @@ export default {
     font-size: 30px;
 }
 .content{
+    line-height: 27px;
     color:white;
+    font-size:20px;
+    word-wrap: break-word;
+    word-break: normal;
 }
 </style>
