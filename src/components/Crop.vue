@@ -15,18 +15,16 @@
             <!--底部操作工具按钮-->
             <div class="footer-btn">
                 <div class="scope-btn">
-                    <el-button @click="getImg">select</el-button>
-                    <el-button size="mini" type="danger" plain icon="el-icon-zoom-in" @click="changeScale(1)">放大
+                    <el-button size="small" @click="getImg">select</el-button>
+                    <el-button size="small" type="danger" plain @click="changeScale(1)">放大
                     </el-button>
-                    <el-button size="mini" type="danger" plain icon="el-icon-zoom-out" @click="changeScale(-1)">缩小
+                    <el-button size="small" type="danger" plain @click="changeScale(-1)">缩小
                     </el-button>
-                    <el-button size="mini" type="danger" plain @click="rotateLeft">↺ </el-button>
-                    <el-button size="mini" type="danger" plain @click="rotateRight">↻ </el-button>
+                    <!-- <el-button size="small" type="danger" plain @click="rotateLeft">↺ </el-button>
+                    <el-button size="small" type="danger" plain @click="rotateRight">↻ </el-button> -->
+                    <el-button size="small" type="success" @click="confirm">confirm</el-button>
                 </div>
-                <div class="upload-btn">
-                    <el-button size="mini" type="success" @click="confirm">confirm <i class="el-icon-upload"></i>
-                    </el-button>
-                </div>
+
             </div>
         </div>
         <!--预览效果图-->
@@ -45,7 +43,10 @@ export default {
     components: {
         VueCropper
     },
-    props: ['Name'],
+    props: {
+        name:String,
+        isMobile:Boolean
+    },
     data() {
         return {
             name: this.Name,
@@ -232,7 +233,7 @@ export default {
     .scope-btn {
         display: flex;
         display: -webkit-flex;
-        justify-content: space-between;
+        justify-content: center;
         padding-right: 10px;
     }
 
@@ -258,8 +259,7 @@ export default {
         -webkit-transition: .1s;
         transition: .1s;
         font-weight: 500;
-        padding: 8px 15px;
-        font-size: 12px;
+        font-size: 2px;
         border-radius: 3px;
         color: #fff;
         background-color: #409EFF;

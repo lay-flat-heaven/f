@@ -5,7 +5,9 @@
         <div>
             <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
             <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
-            <el-dialog title="aaa" v-model="cropperVisible">
+            <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="isMobile"
+                :append-to-body="dialogOption.isAppend" :lock-scroll="dialogOption.isLockScroll"
+                :width="dialogOption.dialogWidth">
                 <crop @transCut="getUrl"></crop>
             </el-dialog>
         </div>
@@ -19,14 +21,27 @@ export default {
     components: {
         Crop
     },
+    props: {
+        isMobile: Boolean,
+    },
     data() {
         return {
+            mobile: this.isMobile,
             fits: ['contain'],
             valueUrl: '',
             srcList: [
 
             ],
-            cropperVisible: false
+            cropperVisible: false,
+
+            dialogOption: {
+
+                dialogWidth: "70%",
+                isFullscreen: false,
+                isAppend: true,
+                isLockScroll: false,
+
+            }
         }
     },
     methods: {
@@ -88,29 +103,42 @@ export default {
         transUrl() {
             this.$emit("transUrl", this.valueUrl)
         },
-        getUrl(url){
-            console.log("img select get url",url)
+        getUrl(url) {
+            console.log("img select get url", url)
             this.srcList.push(url)
             this.valueUrl = url
         }
 
     },
+    computed: {
+        isFullscreenComputed() {
+            if (this.mobile == true) {
+                console.log("is mobile")
+                return true
+            } else {
+                console.log("no mobile")
+                return false
+            }
+        }
+    }
 }
 
 
 </script>
 <style>
-.selectbutton{
+.selectbutton {
     font-size: larger;
-    background-color:rgb(181,56,54);
-    color:white;
+    background-color: rgb(181, 56, 54);
+    color: white;
     width: 100%;
     height: 50px;
 }
-.selectbutton:hover{
-    background-color:rgb(152,47,45);
+
+.selectbutton:hover {
+    background-color: rgb(152, 47, 45);
     color: white;
 }
+
 .block {
     position: relative;
     top: 40px;
