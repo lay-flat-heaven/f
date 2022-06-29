@@ -1,10 +1,10 @@
 <template>
     <el-row class="select-row" :gutter="0">
-        <el-col :span="9">
+        <el-col :xs="0" :sm="0" :md="9" :lg="9" :xl="9">
             <image-select @transUrl="setUrl1"></image-select>
         </el-col>
-        <el-col :span="6"></el-col>
-        <el-col :span="9">
+        <el-col :xs="0" :sm="0" :md="6" :lg="6" :xl="6"></el-col>
+        <el-col :xs="0" :sm="0" :md="9" :lg="9" :xl="9">
             <image-select @transUrl="setUrl2"></image-select>
         </el-col>
     </el-row>

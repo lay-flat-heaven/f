@@ -113,8 +113,10 @@ export default {
             reader.onload = (e) => {
                 let data
                 if (typeof e.target.result === 'object') {
+                    console.log("herehaawoshishabi")
                     data = window.URL.createObjectURL(new Blob([e.target.result]))
                 } else {
+                    console.log("woshishabi")
                     data = e.target.result
                 }
                 this.option.img = data
@@ -157,11 +159,11 @@ export default {
         },
 
         confirm() {
-            this.$refs.cropper.getCropBlob((data) => {
+            this.$refs.cropper.getCropData((data) => {
 
-                let img = window.URL.createObjectURL(data)
-                console.log("confirm", img)
-                this.$emit("transCut", img)
+                //let img = window.URL.createObjectURL(data)
+                console.log("confirm", data)
+                this.$emit("transCut", data)
 
             })
 
