@@ -2,7 +2,7 @@
     <el-carousel indicator-position="none" height="800px" ref="carousel" :arrow="CarouselOption.isArrow"
         :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop">
         <el-carousel-item v-for="item in 3" :key="item" :name="item">
-            <image-select :isMobile="false"></image-select>
+            <image-select :isMobile="true"></image-select>
         </el-carousel-item>
     </el-carousel>
 

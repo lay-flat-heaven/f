@@ -1,11 +1,11 @@
 <template>
     <el-row class="select-row" :gutter="0">
         <el-col :xs="0" :sm="9" :md="9" :lg="9" :xl="9">
-            <image-select @transUrl="setUrl1" isMobile="false"></image-select>
+            <image-select @transUrl="setUrl1" :isMobile="false"></image-select>
         </el-col>
         <el-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6"></el-col>
         <el-col :xs="0" :sm="9" :md="9" :lg="9" :xl="9">
-            <image-select @transUrl="setUrl2" isMobile="false"></image-select>
+            <image-select @transUrl="setUrl2" :isMobile="false"></image-select>
         </el-col>
         <el-col :xs="24" :sm="0" :md="0" :lg="0" :xl="0">
             <mobile-fun></mobile-fun>

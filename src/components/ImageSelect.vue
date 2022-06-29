@@ -5,7 +5,7 @@
         <div>
             <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
             <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
-            <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="isMobile"
+            <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="mobile"
                 :append-to-body="dialogOption.isAppend" :lock-scroll="dialogOption.isLockScroll"
                 :width="dialogOption.dialogWidth">
                 <crop @transCut="getUrl"></crop>
@@ -48,6 +48,7 @@ export default {
         setCropperVisible(ok) {
             this.cropperVisible = ok
             console.log(ok)
+            console.log("mobile value :"+this.mobile)
 
         },
         getImg() {

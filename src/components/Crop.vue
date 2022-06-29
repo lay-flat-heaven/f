@@ -15,14 +15,14 @@
             <!--底部操作工具按钮-->
             <div class="footer-btn">
                 <div class="scope-btn">
-                    <el-button size="small" @click="getImg">select</el-button>
+                    <el-button size="small" @click="getImg">选择</el-button>
                     <el-button size="small" type="danger" plain @click="changeScale(1)">放大
                     </el-button>
                     <el-button size="small" type="danger" plain @click="changeScale(-1)">缩小
                     </el-button>
-                    <!-- <el-button size="small" type="danger" plain @click="rotateLeft">↺ </el-button>
-                    <el-button size="small" type="danger" plain @click="rotateRight">↻ </el-button> -->
-                    <el-button size="small" type="success" @click="confirm">confirm</el-button>
+                    <el-button size="small" type="danger" plain @click="rotateLeft">↺ </el-button>
+                    <el-button size="small" type="danger" plain @click="rotateRight">↻ </el-button>
+                    <el-button size="small" type="success" @click="confirm">确认</el-button>
                 </div>
 
             </div>
@@ -50,6 +50,7 @@ export default {
     data() {
         return {
             name: this.Name,
+            mobile:this.isMobile,
             previews: {},
             url: '',
             option: {
@@ -234,7 +235,6 @@ export default {
         display: flex;
         display: -webkit-flex;
         justify-content: center;
-        padding-right: 10px;
     }
 
     .upload-btn {
