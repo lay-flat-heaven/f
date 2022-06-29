@@ -1,6 +1,7 @@
 <template>
     <el-row class="intro-row" :gutter="0">
-        <el-col :xs="24" :sm="15" :md="20" :lg="15" :xl="15">
+     <el-col :xs="2" :sm="4" :md="4" :lg="3" :xl="15"></el-col>
+        <el-col :xs="20" :sm="15" :md="15" :lg="8" :xl="15">
             <div class="description">
                 <h1 class="title">Introduction</h1>
                 <p class="content">
@@ -13,7 +14,7 @@
                 </p>
             </div>
         </el-col>
-        <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
+        <el-col :xs="1" :sm="5" :md="5" :lg="10" :xl="9">
         </el-col>
     </el-row>
 </template>
@@ -30,7 +31,7 @@ export default {
 
 <style>
 .intro-row {
-    min-height: 200px;
+    min-height: 190px;
     background-image: linear-gradient(260deg, #616161, #212020);
     background-repeat: repeat-x;
 }
@@ -40,9 +41,8 @@ export default {
     position: relative;
     line-height: 1.5px;
     text-align: left;
-    left:150px;
-    top: 20px;
-    height: 75%;
+    top: 8px;
+    height: 60%;
     width: 100%;
 }
 .title{
@@ -53,7 +53,7 @@ export default {
 .content{
     line-height: 27px;
     color:white;
-    font-size:20px;
+    font-size:18px;
     word-wrap: break-word;
     word-break: normal;
 }
