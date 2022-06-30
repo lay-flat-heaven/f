@@ -1,12 +1,14 @@
 <template>
   <el-row class="nav-bar-row" :gutter="0">
-    <el-col :xs="0" :sm="8" :md="4" :lg="3" :xl="8">
+    <!--<el-col :xs="0" :sm="8" :md="4" :lg="3" :xl="8">
     </el-col>
-    <el-col :xs="24" :sm="8" :md="3" :lg="3" :xl="8">
-      <div class="icon-name1">Futu</div>
+    -->
+    <el-col :xs="24" :sm="16" :md="7" :lg="8" :xl="16" style="margin:auto;">
+      <div class="icon-name1">
+        <img src="../assets/yun.png" style="width: 30px;"> Futu</div>
       <div class="icon-name2">rama</div>
     </el-col>
-    <el-col :xs="0" :sm="8" :md="3" :lg="3" :xl="8">
+    <el-col :xs="0" :sm="8" :md="4" :lg="3" :xl="8">
       <div class="drop-list">
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -27,9 +29,9 @@
         </el-dropdown>
       </div>
     </el-col>
-    <el-col :xs="0" :sm="8" :md="4" :lg="6" :xl="8">
+    <el-col :xs="0" :sm="0" :md="5" :lg="5" :xl="0">
     </el-col>
-    <el-col :xs="0" :sm="8" :md="8" :lg="8" :xl="8">
+    <el-col :xs="0" :sm="0" :md="8" :lg="8" :xl="0">
       <div class="sign-login">sign-login</div>
     </el-col>
   </el-row>
@@ -92,14 +94,13 @@ export default {
 }
 
 .icon-name1 {
-  width: 50%;
+  width: 100%;
   position: relative;
   display: inline;
   color: #edeeef;
   letter-spacing: 2px;
   font-size: 25px;
   font-weight: 100;
-  top: 25px;
 }
 
 .icon-name2 {
@@ -110,7 +111,6 @@ export default {
   letter-spacing: 1px;
   font-size: 25px;
   font-weight: bold;
-  top: 25px;
 }
 
 .el-col {
