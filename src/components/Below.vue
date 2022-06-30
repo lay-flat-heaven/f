@@ -1,51 +1,51 @@
 <template>
     <el-row class="down-row-footer" :gutter="0">
-        <el-col :xs="0" :sm="8" :md="8" :lg="16" :xl="8">
-            <div class="container1">
-                <div class="component1" style="line-height:2.5em;">
-                    <div class="text">
-                        Company
-                        <br>
-                        <a class="link" href="http://">About us</a>
-                        <br>
-                        <a class="link" href="http://">Security</a>
+            <el-col :xs="0" :sm="16" :md="12" :lg="12" :xl="16">
+                <div class="container1">
+                    <div class="component1" style="line-height:2.5em;">
+                        <div class="text">
+                            Company
+                            <br>
+                            <a class="link" href="http://">About us</a>
+                            <br>
+                            <a class="link" href="http://">Security</a>
+                        </div>
+                    </div>
+                    <div class="component2" style="line-height:2.5em;">
+                        <div class="text">
+                            Resources
+                            <br>
+                            <a class="link" href="http://">Blog</a>
+                            <br>
+                            <a class="link" href="http://">Status</a>
+                        </div>
+                    </div>
+                    <div class="component3" style="line-height:2.5em;">
+                        <div class="text">
+                            Legal
+                            <br>
+                            <a class="link" href="http://">Privacy</a>
+                            <br>
+                            <a class="link" href="http://">Term</a>
+                        </div>
+                    </div>
+                    <div class="component4" style="line-height:2.5em;">
+                        <div class="text">
+                            Contacta
+                            <br>
+                            <a class="link" href="http://">Contact Us</a>
+                        </div>
                     </div>
                 </div>
-                <div class="component2" style="line-height:2.5em;">
+            </el-col>
+            <el-col :xs="24" :sm="8" :md="12" :lg="12" :xl="8">
+                <div class="container2" style="line-height:1em;">
                     <div class="text">
-                        Resources
-                        <br>
-                        <a class="link" href="http://">Blog</a>
-                        <br>
-                        <a class="link" href="http://">Status</a>
+                        <p>© 2022 lay-flat-heaven</p>
+                        <p style="color:#a7a5a5 ;">Made in WuHan,China</p>
                     </div>
                 </div>
-                <div class="component3" style="line-height:2.5em;">
-                    <div class="text">
-                        Legal
-                        <br>
-                        <a class="link" href="http://">Privacy</a>
-                        <br>
-                        <a class="link" href="http://">Term</a>
-                    </div>
-                </div>
-                <div class="component4" style="line-height:2.5em;">
-                    <div class="text">
-                        Contact
-                        <br>
-                        <a class="link" href="http://">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </el-col>
-        <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-            <div class="container2" style="line-height:1em;">
-                <div class="text">
-                    <p>© 2022 lay-flat-heaven</p>
-                    <p style="color:#a7a5a5 ;">Made in WuHan,China</p>
-                </div>
-            </div>
-        </el-col>
+            </el-col>
     </el-row>
 </template>
 
@@ -55,9 +55,11 @@ export default {
 }
 </script>
 <style>
-.down-row-footer{
+.down-row-footer {
+    background-color: #D8D8D8;
     min-height: 150px;
 }
+
 .text {
     position: relative;
     top: 20px;
@@ -80,12 +82,11 @@ export default {
 }
 
 .container2 {
+    position: relative;
     font-weight: 500;
     height: 150px;
-    width: 35%;
+    width: 100%;
     height: 100%;
-    left: 65%;
-    top: 0px;
     font-size: 1.1em;
     text-align: center;
 }
