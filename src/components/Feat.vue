@@ -16,20 +16,29 @@ import Start from '@/components/Start.vue'
 import Crop from '@/components/Crop.vue'
 
 
-const mediaQuery = window.matchMedia(`(max-width: 768px)`)
+const mediaQueryMobile = window.matchMedia(`(max-width: 768px)`)
+const mediaQueryWin = window.matchMedia(`(min-width: 768px)`)
 function handleMobileResize(e) {
     if (e.matches) {
         console.log("嘿嘿嘿")
-        bridge.currentHeight = "1100px"
+        bridge.currentHeight = "1050px"
     }
 }
-mediaQuery.addEventListener('change', handleMobileResize)
+function handleWinResize(e){
+     if (e.matches) {
+        console.log("嘿嘿嘿嘿")
+        bridge.currentHeight = "750px"
+    }
+
+}
+mediaQueryMobile.addEventListener('change', handleMobileResize)
+mediaQueryWin.addEventListener('change',handleWinResize)
 let bridge = null
 export default {
     name: 'Feat',
     data() {
         return {
-            currentHeight: "800px",
+            currentHeight: "750px",
             current: Start,
             componentList: [
                 Start,
@@ -45,9 +54,13 @@ export default {
     created: function () {
 
         bridge = this
-        if (mediaQuery.matches) {
+        if (mediaQueryMobile.matches) {
             console.log("嘿嘿嘿")
-            bridge.currentHeight = "1100px"
+            bridge.currentHeight = "1050px"
+        }
+        if (mediaQueryWin.matches) {
+            console.log("嘿嘿嘿")
+            bridge.currentHeight = "750px"
         }
 
 
