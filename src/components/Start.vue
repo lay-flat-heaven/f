@@ -316,7 +316,7 @@ export default {
 @media screen and (max-width : 768px) {
     .part2content {
         position: relative;
-        margin-left: 0px;
+        margin-left: 15px;
         margin-right: 0px;
         width: 100%;
         height: 170px;

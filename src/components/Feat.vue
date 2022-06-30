@@ -2,13 +2,8 @@
     <component :is="current"></component>
 </template> -->
 <template>
-    <el-carousel 
-    indicator-position="none" 
-    ref="carousel"
-    height="1600px"
-    :arrow="CarouselOption.isArrow" 
-    :autoplay="CarouselOption.isAuto" 
-    :loop="CarouselOption.isLoop">
+    <el-carousel indicator-position="none" ref="carousel" :height="currentHeight" :arrow="CarouselOption.isArrow"
+        :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop">
         <el-carousel-item v-for="item in componentList" :key="item" :name="item.name">
             <component :is="item" @switch="switchTo"></component>
         </el-carousel-item>
@@ -19,33 +14,59 @@
 import Fun from '@/components/Fun.vue'
 import Start from '@/components/Start.vue'
 import Crop from '@/components/Crop.vue'
+
+
+const mediaQuery = window.matchMedia(`(max-width: 768px)`)
+function handleMobileResize(e) {
+    if (e.matches) {
+        console.log("嘿嘿嘿")
+        bridge.currentHeight = "1100px"
+    }
+}
+mediaQuery.addEventListener('change', handleMobileResize)
+let bridge = null
 export default {
     name: 'Feat',
     data() {
         return {
+            currentHeight: "800px",
             current: Start,
-            componentList:[
+            componentList: [
                 Start,
                 Fun
             ],
-            CarouselOption:{
-                isLoop:false,
-                isAuto:false,
-                isArrow:'never',
+            CarouselOption: {
+                isLoop: false,
+                isAuto: false,
+                isArrow: 'never',
             }
         }
+    },
+    created: function () {
+
+        bridge = this
+        if (mediaQuery.matches) {
+            console.log("嘿嘿嘿")
+            bridge.currentHeight = "1100px"
+        }
+
+
     },
     components: {
         Fun,
         Start,
         Crop
     },
-    methods:{
-        switchTo(name){
+    methods: {
+        switchTo(name) {
             this.$refs.carousel.setActiveItem(name)
-        }
+        },
     }
 
 }
+
 </script>
+
+<style>
+</style>
 
