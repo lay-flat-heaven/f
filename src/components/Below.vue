@@ -31,7 +31,7 @@
                     </div>
                     <div class="component4" style="line-height:2.5em;">
                         <div class="text">
-                            Contact
+                            Contacta
                             <br>
                             <a class="link" href="http://">Contact Us</a>
                         </div>
