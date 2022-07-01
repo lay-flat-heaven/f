@@ -1,5 +1,5 @@
 <template>
-    <el-row class="select-row" :gutter="0">
+    <!-- <el-row class="select-row" :gutter="0">
         <el-col :xs="0" :sm="9" :md="9" :lg="9" :xl="9">
             <image-select @transUrl="setUrl1" :isMobile="false"></image-select>
         </el-col>
@@ -10,17 +10,15 @@
         <el-col :xs="24" :sm="0" :md="0" :lg="0" :xl="0">
             <mobile-fun></mobile-fun>
         </el-col>
-    </el-row>
-    <!-- <el-row class="upload-row">
-        <div class="upload-button">
-            <upload-button :url1="aboveurl1" :url2="aboveurl2"></upload-button>
-        </div>
     </el-row> -->
+        <div class="upload-row">
+            <upload> :url1="aboveurl1" :url2="aboveurl2"></upload>
+        </div>
 </template>
 
 <script>
 import ImageSelect from '@/components/ImageSelect.vue'
-import UploadButton from '@/components/UploadButton.vue'
+import Upload from '@/components/Upload.vue'
 import MobileFun from '@/components/MobileFun.vue'
 export default {
     name: 'Fun',
@@ -35,7 +33,7 @@ export default {
     },
     components: {
         ImageSelect,
-        UploadButton,
+        Upload,
         MobileFun
     },
     methods: {
@@ -59,6 +57,6 @@ export default {
 
 .upload-row {
     background-color: yellow;
-    min-height: 50px;
+    min-height: 600px;
 }
 </style>

@@ -21,7 +21,7 @@ const mediaQueryWin = window.matchMedia(`(min-width: 768px)`)
 function handleMobileResize(e) {
     if (e.matches) {
         console.log("嘿嘿嘿")
-        bridge.currentHeight = "1050px"
+        bridge.currentHeight = "1100px"
     }
 }
 function handleWinResize(e){
@@ -56,7 +56,7 @@ export default {
         bridge = this
         if (mediaQueryMobile.matches) {
             console.log("嘿嘿嘿")
-            bridge.currentHeight = "1050px"
+            bridge.currentHeight = "1100px"
         }
         if (mediaQueryWin.matches) {
             console.log("嘿嘿嘿")

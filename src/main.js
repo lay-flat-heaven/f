@@ -9,5 +9,8 @@ import 'element-plus/dist/index.css'
 import VueCropper from 'vue-cropper'
 import 'vue-cropper/dist/index.css'
 
-createApp(App).use(router).use(ElementPlus).use(VueCropper).mount('#app')
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+createApp(App).use(router).use(ElementPlus).use(VueCropper).use(VueAxios,axios).mount('#app')
 
