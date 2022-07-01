@@ -27,14 +27,13 @@ export default {
         return {
             mobile: this.isMobile,
             fits: ['contain'],
-            valueUrl: '',
+            valueUrl: require('../assets/background.png'),
             srcList: [
 
             ],
             cropperVisible: false,
 
             dialogOption: {
-
                 dialogWidth: "70%",
                 isFullscreen: false,
                 isAppend: true,
@@ -139,7 +138,7 @@ export default {
 
 .block {
     position: relative;
-    top: 40px;
+    top: 180px;
     display: inline-block;
 }
 </style>

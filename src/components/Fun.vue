@@ -1,18 +1,23 @@
 <template>
     <el-row class="select-row" :gutter="0">
-        <el-col :xs="0" :sm="9" :md="9" :lg="9" :xl="9">
+        <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
             <image-select @transUrl="setUrl1" :isMobile="false"></image-select>
         </el-col>
-        <el-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6"></el-col>
-        <el-col :xs="0" :sm="9" :md="9" :lg="9" :xl="9">
+        <el-col :xs="0" :sm="0" :md="0" :lg="3" :xl="0">
+            <img src="../assets/add.png" style="position:relative;top:300px;width: 70%;">
+        </el-col>
+        <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
             <image-select @transUrl="setUrl2" :isMobile="false"></image-select>
+        </el-col>
+        <el-col :xs="0" :sm="0" :md="0" :lg="3" :xl="0">
+            <img src="../assets/arrowhead.png" style="position:relative;top:300px;width: 70%;">
+        </el-col>
+        <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
+            <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
         </el-col>
         <el-col :xs="24" :sm="0" :md="0" :lg="0" :xl="0">
             <mobile-fun></mobile-fun>
         </el-col>
-    </el-row>
-    <el-row class="upload-row">
-        <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
     </el-row>
 </template>
 
@@ -51,8 +56,8 @@ export default {
 
 <style>
 .select-row {
-    background-color: rgb(230, 228, 228);
-    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 800px;
 }
 
 .upload-row {
