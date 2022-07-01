@@ -1,6 +1,6 @@
 <template>
-    <div class="block">
-        <el-image style="width:240px;height:320px;" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
+    <el-card class="image-card" :body-style="{ padding: '0px' }">
+        <el-image style="width:270px;height:360px;" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
             <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
@@ -10,7 +10,7 @@
                 <crop @transCut="getUrl"></crop>
             </el-dialog>
         </div>
-    </div>
+    </el-card>
 </template>
 <script>
 
@@ -27,7 +27,7 @@ export default {
         return {
             mobile: this.isMobile,
             fits: ['contain'],
-            valueUrl: require('../assets/background.png'),
+            valueUrl: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
             srcList: [
 
             ],
@@ -123,6 +123,10 @@ export default {
 
 </script>
 <style>
+.image-card{
+    width: 270px;
+    margin: auto;
+}
 .selectbutton {
     font-size: larger;
     background-color: rgb(181, 56, 54);

@@ -1,6 +1,6 @@
 <template>
     <div class="load">
-        <el-image style="width:240px;height:320px;" :src="valueUrl" :fit="fit" :preview-src-list="srcPre">
+        <el-image style="width:240px;height:320px;" :src="url" :fit="fit" :preview-src-list="srcPre">
         </el-image>
         <el-button class="button" @click="upload">
             upload
@@ -18,8 +18,7 @@ export default {
         return {
             lurl1: '',
             lurl2: '',
-            valueUrl:require('../assets/background.png'),
-            url: 'data:image/*;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAAGQFDQAAAAAAXNSR0IArs4c6QAAAaJJREFUOBGlVT1OwzAYbcxUlNAKJm5QKRMskWBgKEM3JtauDHANuADswMoFuACgtqpoByLlBjChip+tJLxX5bNcx2mq1ovj7/3Zn622lmWZV8tHr9c7mX3iIxsMBjcCFOd+v/+qqSZMmQYFoN9cEYszAc05jmNfoXAAwrMJ0CEMw59ZDeC9EAiYRE2wAQ8766Rp+uh53ksURYcFlVHgKcA9B/dKt4exaFfXZWAIRjDfp5cWirFpAJNRnjCGYE84C2ec6QkmH6UkgKfD4XCzlGAB4F8onOlhOp3+JkkSWHhhya5iXCvseYPoZDL5WiSUawiCYGfWEKgVYv8objabW61W65vfMkwBbvxTd7FMaAtopEVc2EJumXVuiQn85pgTsWAKubYFrDlHLkzxnLddBP0WCfI5NRqNjt0Il3CZmjzF3PvSw24YeIe5KwbrhpohedCoXq+3dQ/ZApBu1wl1hfi+fyyXpsPkVKuEVoWIdyFMgGVClw0Rz9IwIbhClVLv+EnZFQ7ueIx2taVdUrfnyjARuEIR8oaQo6oQ8Vhp5t/CKsJ/dUVKACzJm6wAAAAASUVORK5CYII='
+            url: require('../assets/logo.png')
         }
     },
     methods: {
@@ -36,8 +35,6 @@ export default {
         },
         upload() {
             let fdata = new FormData()
-            let kk = 'data:image/*;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAAGQFDQAAAAAAXNSR0IArs4c6QAAAaJJREFUOBGlVT1OwzAYbcxUlNAKJm5QKRMskWBgKEM3JtauDHANuADswMoFuACgtqpoByLlBjChip+tJLxX5bNcx2mq1ovj7/3Zn622lmWZV8tHr9c7mX3iIxsMBjcCFOd+v/+qqSZMmQYFoN9cEYszAc05jmNfoXAAwrMJ0CEMw59ZDeC9EAiYRE2wAQ8766Rp+uh53ksURYcFlVHgKcA9B/dKt4exaFfXZWAIRjDfp5cWirFpAJNRnjCGYE84C2ec6QkmH6UkgKfD4XCzlGAB4F8onOlhOp3+JkkSWHhhya5iXCvseYPoZDL5WiSUawiCYGfWEKgVYv8objabW61W65vfMkwBbvxTd7FMaAtopEVc2EJumXVuiQn85pgTsWAKubYFrDlHLkzxnLddBP0WCfI5NRqNjt0Il3CZmjzF3PvSw24YeIe5KwbrhpohedCoXq+3dQ/ZApBu1wl1hfi+fyyXpsPkVKuEVoWIdyFMgGVClw0Rz9IwIbhClVLv+EnZFQ7ueIx2taVdUrfnyjARuEIR8oaQo6oQ8Vhp5t/CKsJ/dUVKACzJm6wAAAAASUVORK5CYII='
-
             this.url = this.lurl1
             fdata.append("file", this.dataURLtoBlob(this.lurl1), "clothe.jpg")
             fdata.append("file", this.dataURLtoBlob(this.lurl2), "human.jpg")

@@ -5,7 +5,7 @@
     <el-carousel indicator-position="none" ref="carousel" :height="currentHeight" :arrow="CarouselOption.isArrow"
         :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop">
         <el-carousel-item v-for="item in componentList" :key="item" :name="item.name">
-            <component :is="item" @switch="switchTo"></component>
+            <component :is="item" @switch="switchTo" @mobile="fitMobileHeight"></component>
         </el-carousel-item>
     </el-carousel>
 </template>
@@ -22,12 +22,14 @@ function handleMobileResize(e) {
     if (e.matches) {
         console.log("嘿嘿嘿")
         bridge.currentHeight = "1100px"
+        bridge.isMobile = true
     }
 }
 function handleWinResize(e){
      if (e.matches) {
         console.log("嘿嘿嘿嘿")
         bridge.currentHeight = "750px"
+        bridge.isMobile = false
     }
 
 }
@@ -38,6 +40,7 @@ export default {
     name: 'Feat',
     data() {
         return {
+            isMobile:false,
             currentHeight: "750px",
             current: Start,
             componentList: [
@@ -57,10 +60,12 @@ export default {
         if (mediaQueryMobile.matches) {
             console.log("嘿嘿嘿")
             bridge.currentHeight = "1100px"
+            bridge.isMobile = true
         }
         if (mediaQueryWin.matches) {
             console.log("嘿嘿嘿")
             bridge.currentHeight = "750px"
+            bridge.isMobile = false
         }
 
 
@@ -74,6 +79,15 @@ export default {
         switchTo(name) {
             this.$refs.carousel.setActiveItem(name)
         },
+        fitMobileHeight(){
+
+            if (this.isMobile == true){
+                this.currentHeight = "600px"
+            }else {
+                this.currentHeight = "1100px"
+            }
+
+        }
     }
 
 }
