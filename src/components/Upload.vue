@@ -31,11 +31,12 @@ export default {
         },
         upload() {
             let fdata = new FormData()
-            console.log(this.lurl1,"\n","ready")
-            console.log(this.lurl2,"\n","ready")
             let kk = 'data:image/*;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAAGQFDQAAAAAAXNSR0IArs4c6QAAAaJJREFUOBGlVT1OwzAYbcxUlNAKJm5QKRMskWBgKEM3JtauDHANuADswMoFuACgtqpoByLlBjChip+tJLxX5bNcx2mq1ovj7/3Zn622lmWZV8tHr9c7mX3iIxsMBjcCFOd+v/+qqSZMmQYFoN9cEYszAc05jmNfoXAAwrMJ0CEMw59ZDeC9EAiYRE2wAQ8766Rp+uh53ksURYcFlVHgKcA9B/dKt4exaFfXZWAIRjDfp5cWirFpAJNRnjCGYE84C2ec6QkmH6UkgKfD4XCzlGAB4F8onOlhOp3+JkkSWHhhya5iXCvseYPoZDL5WiSUawiCYGfWEKgVYv8objabW61W65vfMkwBbvxTd7FMaAtopEVc2EJumXVuiQn85pgTsWAKubYFrDlHLkzxnLddBP0WCfI5NRqNjt0Il3CZmjzF3PvSw24YeIe5KwbrhpohedCoXq+3dQ/ZApBu1wl1hfi+fyyXpsPkVKuEVoWIdyFMgGVClw0Rz9IwIbhClVLv+EnZFQ7ueIx2taVdUrfnyjARuEIR8oaQo6oQ8Vhp5t/CKsJ/dUVKACzJm6wAAAAASUVORK5CYII='
 
-            fdata.append("file", this.dataURLtoBlob(kk), "clothe.jpg")
+            this.url = this.lurl1
+            fdata.append("file", this.dataURLtoBlob(this.lurl1), "clothe.jpg")
+            fdata.append("file", this.dataURLtoBlob(this.lurl2), "human.jpg")
+
             console.log(this.dataURLtoBlob(kk))
             this.axios({
                 method: 'POST',
