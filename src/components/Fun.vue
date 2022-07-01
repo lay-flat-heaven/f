@@ -11,9 +11,12 @@
             <mobile-fun></mobile-fun>
         </el-col>
     </el-row>
-    <el-row class="upload-row">
-        <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
-    </el-row>
+    <!-- <el-row class="upload-row">
+        <el-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
+            <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
+        </el-col>
+
+    </el-row> -->
 </template>
 
 <script>

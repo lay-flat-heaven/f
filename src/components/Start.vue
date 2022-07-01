@@ -132,79 +132,7 @@
 
     </el-row>
 
-    <!-- <el-row class="illustrate">
-        <el-col :span="12">
-            <div class="part1">
-                <p class="step">
-                    <img src="../assets/picture1.png" class="picture1">
-                    &nbsp&nbsp&nbspstep1
-                </p>
-                <p class="stepcontent">
-                    select pictures of model and cloth in your device which meets the requirements to apply them
-                </p>
-            </div>
-            <div class="part2">
-                <div class="part2content">
-                    <div class="part2picture">
-                        <img src="../assets/picture3.png" class="picture2">
-                    </div>
-                    <div class="part2text">
-                        <p class="part2texttitle">Efficiency</p>
-                        <p class="part2textcontent">
-                            just a single second is absolutely adequate to a gengeration
-                        </p>
-                    </div>
-                </div>
-                <div class="part2content">
-                    <div class="part2picture">
-                        <img src="../assets/picture5.png" class="picture2">
-                    </div>
-                    <div class="part2text">
-                        <p class="part2texttitle">Mobility</p>
-                        <p class="part2textcontent">
-                            with the offered pre-trained parameters , even a cellphone is sufficient to run Futurama
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </el-col>
-        <el-col :span="12">
-            <div class="part1">
-                <p class="step">
-                    <img src="../assets/picture2.png" class="picture1">
-                    &nbsp&nbsp&nbspstep2
-                </p>
-                <p class="stepcontent">
-                    fill the images into the fitting block and just click the "generate" button
-                </p>
 
-            </div>
-            <div class="part2">
-                <div class="part2content">
-                    <div class="part2picture">
-                        <img src="../assets/picture4.png" class="picture2">
-                    </div>
-                    <div class="part2text">
-                        <p class="part2texttitle">Foresight</p>
-                        <p class="part2textcontent">
-                            pictures in wild are on their way to availability
-                        </p>
-                    </div>
-                </div>
-                <div class="part2content">
-                    <div class="part2picture">
-                        <img src="../assets/picture6.png" class="picture2">
-                    </div>
-                    <div class="part2text">
-                        <p class="part2texttitle">Accessibility</p>
-                        <p class="part2textcontent">
-                            get started simply with images of the cloth and the model.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </el-col>
-    </el-row> -->
 </template>
 
 <script>
@@ -217,6 +145,7 @@ export default {
     methods: {
         switchToMainFun() {
             this.$emit("switch", 'Fun')
+            this.$emit("mobile")
         }
     }
 }

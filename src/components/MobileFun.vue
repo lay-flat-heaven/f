@@ -1,8 +1,10 @@
 <template>
-    <el-carousel indicator-position="none" height="800px" ref="carousel" :arrow="CarouselOption.isArrow"
+    <el-carousel indicator-position="none" height="600px" ref="carousel" :arrow="CarouselOption.isArrow"
         :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop">
         <el-carousel-item v-for="item in 3" :key="item" :name="item">
-            <image-select :isMobile="true"></image-select>
+            <div class="mobile-image-card">
+                <image-select :isMobile="true"></image-select>
+            </div>
         </el-carousel-item>
     </el-carousel>
 
@@ -27,3 +29,10 @@ export default {
     }
 }
 </script>
+
+<style>
+.mobile-image-card{
+    position:relative;
+    top:70px;
+}
+</style>

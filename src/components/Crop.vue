@@ -65,7 +65,7 @@ export default {
                 fixed: true,         //是否开启截图框宽高固定比例
                 fixedNumber: [3, 4], //截图框的宽高比例
                 full: false,         //false按原比例裁切图片，不失真
-                fixedBox: true,      //固定截图框大小，不允许改变
+                fixedBox: false,      //固定截图框大小，不允许改变
                 canMove: false,      //上传图片是否可以移动
                 canMoveBox: true,    //截图框能否拖动
                 original: false,     //上传图片按照原始比例渲染
