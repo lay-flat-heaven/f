@@ -5,9 +5,8 @@
         <div>
             <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
             <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
-            <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="mobile"
-                :append-to-body="dialogOption.isAppend" :lock-scroll="dialogOption.isLockScroll"
-                :width="dialogOption.dialogWidth">
+            <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="mobile" :append-to-body="dialogOption.isAppend"
+                :lock-scroll="dialogOption.isLockScroll" :width="dialogOption.dialogWidth">
                 <crop @transCut="getUrl"></crop>
             </el-dialog>
         </div>
@@ -48,7 +47,7 @@ export default {
         setCropperVisible(ok) {
             this.cropperVisible = ok
             console.log(ok)
-            console.log("mobile value :"+this.mobile)
+            console.log("mobile value :" + this.mobile)
 
         },
         getImg() {
@@ -101,13 +100,11 @@ export default {
                 console.log('destroy')
             }
         },
-        transUrl() {
-            this.$emit("transUrl", this.valueUrl)
-        },
         getUrl(url) {
             console.log("img select get url", url)
             this.srcList.push(url)
             this.valueUrl = url
+            this.$emit("transUrl", this.valueUrl)
         }
 
     },
