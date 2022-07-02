@@ -20,27 +20,30 @@ const mediaQueryMobile = window.matchMedia(`(max-width: 768px)`)
 const mediaQueryWin = window.matchMedia(`(min-width: 768px)`)
 function handleMobileResize(e) {
     if (e.matches) {
-        console.log("嘿嘿嘿")
+
         bridge.currentHeight = "1100px"
+        console.log("currentHeight", bridge.currentHeight)
+
         bridge.isMobile = true
     }
 }
-function handleWinResize(e){
-     if (e.matches) {
-        console.log("嘿嘿嘿嘿")
+function handleWinResize(e) {
+    if (e.matches) {
         bridge.currentHeight = "750px"
+        console.log("currentHeight", bridge.currentHeight)
         bridge.isMobile = false
     }
 
 }
 mediaQueryMobile.addEventListener('change', handleMobileResize)
-mediaQueryWin.addEventListener('change',handleWinResize)
+mediaQueryWin.addEventListener('change', handleWinResize)
 let bridge = null
 export default {
     name: 'Feat',
     data() {
         return {
-            isMobile:false,
+            isMobile: false,
+            isMainFun :false,
             currentHeight: "750px",
             current: Start,
             componentList: [
@@ -58,13 +61,15 @@ export default {
 
         bridge = this
         if (mediaQueryMobile.matches) {
-            console.log("嘿嘿嘿")
+
             bridge.currentHeight = "1100px"
+            console.log("currentHeight", bridge.currentHeight)
             bridge.isMobile = true
         }
         if (mediaQueryWin.matches) {
-            console.log("嘿嘿嘿")
+
             bridge.currentHeight = "750px"
+            console.log("currentHeight", bridge.currentHeight)
             bridge.isMobile = false
         }
 
@@ -78,13 +83,12 @@ export default {
     methods: {
         switchTo(name) {
             this.$refs.carousel.setActiveItem(name)
+            this.currentHeight = "600px"
         },
-        fitMobileHeight(){
+        fitMobileHeight() {
 
-            if (this.isMobile == true){
+            if (this.isMobile == true) {
                 this.currentHeight = "600px"
-            }else {
-                this.currentHeight = "1100px"
             }
 
         }

@@ -1,9 +1,9 @@
 <template>
-    <el-card class="image-card" :body-style="{ padding: '0px' }">
-        <el-image style="width:270px;height:360px;" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
+    <el-card  class="card" :style="cardStyle" :body-style="{ padding: '0px' }" :shadow="isShadow">
+        <el-image :style="imageStyle" class="box" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
-            <el-button class="selectbutton" @click="setCropperVisible(true)">select</el-button>
+            <el-button class="button" :style="buttonStyle" @click="setCropperVisible(true)">select</el-button>
             <!-- <el-button @click="setCropperVisible(true)">crop</el-button> -->
             <el-dialog title="aaa" v-model="cropperVisible" :fullscreen="mobile" :append-to-body="dialogOption.isAppend"
                 :lock-scroll="dialogOption.isLockScroll" :width="dialogOption.dialogWidth">
@@ -22,10 +22,15 @@ export default {
     },
     props: {
         isMobile: Boolean,
+        pwidth: Number,
+        pheight: Number
     },
     data() {
         return {
+            isShadow:"always",
             mobile: this.isMobile,
+            width: this.pwidth,
+            height: this.pheight,
             fits: ['contain'],
             valueUrl: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
             srcList: [
@@ -116,33 +121,51 @@ export default {
                 console.log("no mobile")
                 return false
             }
+        },
+        imageStyle() {
+            return {
+                '--box-width': this.width + 'px',
+                '--box-height': this.width / 3 * 4 + 'px'
+            }
+
+        },
+        cardStyle() {
+            return {
+                '--card-width': this.width + 'px'
+            }
+        },
+        buttonStyle(){
+            return {
+                '--button-height':this.height /32 *5 +'px'
+            }
         }
     }
 }
 
 
 </script>
-<style>
-.image-card{
-    width: 270px;
+<style scoped>
+.box {
+    width: var(--box-width);
+    height: var(--box-height);
+}
+
+.card {
+    width: var(--card-width);
     margin: auto;
 }
-.selectbutton {
+
+.button {
     font-size: larger;
     background-color: rgb(181, 56, 54);
     color: white;
     width: 100%;
-    height: 50px;
+    height: var(--button-height);
 }
 
-.selectbutton:hover {
+.button:hover {
     background-color: rgb(152, 47, 45);
     color: white;
 }
 
-.block {
-    position: relative;
-    top: 180px;
-    display: inline-block;
-}
 </style>

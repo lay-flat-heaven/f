@@ -1,6 +1,6 @@
 <template>
     <el-row class="select-row" :gutter="0">
-        <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
+        <!-- <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
             <image-select @transUrl="setUrl1" :isMobile="false"></image-select>
         </el-col>
         <el-col :xs="0" :sm="0" :md="0" :lg="3" :xl="0">
@@ -14,6 +14,9 @@
         </el-col>
         <el-col :xs="0" :sm="8" :md="8" :lg="6" :xl="8">
             <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
+        </el-col> -->
+        <el-col :xs="0" :sm="24" :md="24" :lg="24" :xl="24">
+            <win-fun></win-fun>
         </el-col>
         <el-col :xs="24" :sm="0" :md="0" :lg="0" :xl="0">
             <mobile-fun></mobile-fun>
@@ -31,6 +34,7 @@
 import ImageSelect from '@/components/ImageSelect.vue'
 import Upload from '@/components/Upload.vue'
 import MobileFun from '@/components/MobileFun.vue'
+import WinFun from '@/components/WinFun.vue'
 export default {
     name: 'Fun',
     props: {
@@ -45,7 +49,8 @@ export default {
     components: {
         ImageSelect,
         Upload,
-        MobileFun
+        MobileFun,
+        WinFun
     },
     methods: {
         setUrl1(url) {
@@ -63,7 +68,7 @@ export default {
 <style>
 .select-row {
     background-color: rgba(255, 255, 255, 0.9);
-    min-height: 800px;
+    min-height: 500px;
 }
 
 .upload-row {
