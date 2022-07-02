@@ -3,9 +3,9 @@
 </template> -->
 <template>
     <el-carousel indicator-position="none" ref="carousel" :height="currentHeight" :arrow="CarouselOption.isArrow"
-        :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop">
-        <el-carousel-item v-for="item in componentList" :key="item" :name="item.name">
-            <component :is="item" @switch="switchTo" @mobile="fitMobileHeight"></component>
+        :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop" @change="onPageChange">
+        <el-carousel-item v-for="item in componentList" :key="item" :name="item.name" >
+            <component :is="item" @switch="switchTo" @mobile="fitMobileHeight" :pallShow="winFunShow"></component>
         </el-carousel-item>
     </el-carousel>
 </template>
@@ -42,6 +42,7 @@ export default {
     name: 'Feat',
     data() {
         return {
+            winFunShow:false,
             isMobile: false,
             isMainFun :false,
             currentHeight: "750px",
@@ -91,7 +92,12 @@ export default {
                 this.currentHeight = "600px"
             }
 
+        },
+        onPageChange(currentPage,nextPage){
+            console.log("page change")
+            this.winFunShow = true
         }
+
     }
 
 }

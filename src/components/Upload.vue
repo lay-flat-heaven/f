@@ -1,11 +1,9 @@
 <template>
-    <div class="load">
-        <el-image style="width:240px;height:320px;" :src="url" :fit="fit" :preview-src-list="srcPre">
+    <transition name="el-zoom-in-bottom">
+        <el-image v-show="haveResult" style="width:201.6px;height:283.5px;" :src="result" :fit="fit"
+            :preview-src-list="srcPre">
         </el-image>
-        <el-button class="button" @click="upload">
-            upload
-        </el-button>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -13,12 +11,15 @@
 
 export default {
     name: 'Upload',
-    props: ['url1', 'url2'],
+    props: ['urlPeople', 'urlClothe', 'canUpload', 'testupload'],
     data() {
         return {
-            lurl1: '',
-            lurl2: '',
-            url: require('../assets/logo.png')
+            lurlPeople: '',
+            lurlClothe: '',
+            url: require('../assets/logo.png'),
+            thisUpload: this.canUpload,
+            result: '',
+            haveResult: false
         }
     },
     methods: {
@@ -35,11 +36,9 @@ export default {
         },
         upload() {
             let fdata = new FormData()
-            this.url = this.lurl1
-            fdata.append("file", this.dataURLtoBlob(this.lurl1), "clothe.jpg")
-            fdata.append("file", this.dataURLtoBlob(this.lurl2), "human.jpg")
+            fdata.append("file", this.dataURLtoBlob(this.lurlPeople), "People.jpg")
+            fdata.append("file", this.dataURLtoBlob(this.lurlClothe), "Clothe.jpg")
 
-            console.log(this.dataURLtoBlob(kk))
             this.axios({
                 method: 'POST',
                 url: 'http://127.0.0.1:9099/upload',
@@ -49,35 +48,57 @@ export default {
                 }
             }).then(resp => {
                 let response = resp.data;
+                this.result = response
+                setTimeout(this.showResult, 1000)
                 console.log(response)
             }).catch(err => {
                 console.log(err);
             });
 
+        },
+        showResult() {
+            this.haveResult = true
         }
     },
     watch: {
-        url1: function (newData, oldData) {
-            this.lurl1 = newData
+        urlPeople: function (newData, oldData) {
+            this.lurlPeople = newData
             console.log("url1 updated")
         },
-        url2: function (newData, oldData) {
-            this.lurl2 = newData
+        urlClothe: function (newData, oldData) {
+            this.lurlClothe = newData
             console.log("url2 updated")
+        },
+        canUpload: function (newData, oldData) {
+            if (newData == true) {
+                if (this.lurlPeople != '' && this.lurlClothe != '') {
+                    this.upload()
+                } else {
+                    console.log("乌鱼子")
+                }
+            }
+        },
+        testupload: function (newData, oldData) {
+            if (newData == true) {
+                this.result = this.url
+                setTimeout(this.showResult, 1000)
+
+            }
         }
     }
 }
 </script>
 <style>
-.button{
+.button {
     font-size: larger;
     background-color: rgb(181, 56, 54);
     color: white;
     width: 60%;
     height: 50px;
 }
-.load{
-    position:relative;
-    top:180px;
+
+.load {
+    position: relative;
+    top: 180px;
 }
 </style>

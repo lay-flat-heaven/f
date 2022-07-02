@@ -16,7 +16,7 @@
             <upload :url1="aboveurl1" :url2="aboveurl2"></upload>
         </el-col> -->
         <el-col :xs="0" :sm="24" :md="24" :lg="24" :xl="24">
-            <win-fun></win-fun>
+            <win-fun :pshow="winFunShow"></win-fun>
         </el-col>
         <el-col :xs="24" :sm="0" :md="0" :lg="0" :xl="0">
             <mobile-fun></mobile-fun>
@@ -38,12 +38,12 @@ import WinFun from '@/components/WinFun.vue'
 export default {
     name: 'Fun',
     props: {
-        isMobile: Boolean
+        isMobile: Boolean,
+        pallShow:Boolean
     },
     data() {
         return {
-            aboveurl1: '',
-            aboveurl2: ''
+            winFunShow:this.pallShow
         }
     },
     components: {
@@ -53,13 +53,11 @@ export default {
         WinFun
     },
     methods: {
-        setUrl1(url) {
-            this.aboveurl1 = url
-            console.log("url1 have transfered")
-        },
-        setUrl2(url) {
-            this.aboveurl2 = url
-            console.log("url2 have transfered")
+    },
+    watch:{
+        pallShow(newData,oldData){
+            console.log("pallshow changed" ,this.pallShow,this.winFunShow)
+            this.winFunShow = this.pallShow
         }
     }
 }

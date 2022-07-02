@@ -139,6 +139,11 @@
 import Fun from '@/components/Fun.vue'
 export default {
     name: 'Start',
+    data(){
+        return{
+            winFunShow:false,
+        }
+    },
     components: {
         Fun
     },
