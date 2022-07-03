@@ -3,8 +3,11 @@
         :autoplay="CarouselOption.isAuto" :loop="CarouselOption.isLoop" @touchstart="start" @touchmove="move"
         @touchend="end">
         <el-carousel-item v-for="item in 3" :key="item" :name="item">
-            <div class="mobile-image-card">
-                <image-select :isMobile="true"></image-select>
+            <div v-if="item == 1" class="mobile-image-card">
+                <image-select :isMobile="true" :pheight="320" :pwidth="240" @transUrl="setUrlPeople"></image-select>
+            </div>
+             <div v-if="item == 2" class="mobile-image-card">
+                <image-select :isMobile="true" :pheight="320" :pwidth="240" @transUrl="setUrlClothe"></image-select>
             </div>
         </el-carousel-item>
     </el-carousel>
@@ -27,7 +30,8 @@ export default {
                 isLoop: false,
                 isAuto: false,
                 isArrow: 'never',
-            }
+            },
+            callbackArr:['setUrlPeople','setUrlClothe']
         }
     },
     methods: {
@@ -45,13 +49,15 @@ export default {
             console.log("start ", this.startPoint)
             console.log("end ", this.endPoint)
             var direction = this.startPoint - this.endPoint
-            if (direction < 0 && direction <-100) {
-                this.$refs.mobileCarousel.prev()
-                this.reset()
-            }
-            if (direction > 0 && direction > 100) {
-                this.$refs.mobileCarousel.next()
-                this.reset()
+            if (this.startPoint != 0 && this.endPoint != 0) {
+                if (direction < 0 && direction < -60) {
+                    this.$refs.mobileCarousel.prev()
+                    this.reset()
+                }
+                if (direction > 0 && direction > 60) {
+                    this.$refs.mobileCarousel.next()
+                    this.reset()
+                }
             }
 
             this.reset()

@@ -51,8 +51,10 @@ export default {
                 }
             }).then(resp => {
                 let response = resp.data;
-                let arr = JSON.parse(response)
-                this.result = response
+                console.log(response)
+
+                let arr = eval(response)
+                this.result = 'data:image/jpeg;base64,'+arr.file_content
                 console.log(arr.file_content)
                 this.stopWaiting()
                 this.showResult()
