@@ -73,6 +73,11 @@ export default {
         },
         stopWaiting() {
             this.$emit("wait", false)
+        },
+        uploadInhand(urlP,urlC){
+            this.lurlPeople = urlP
+            this.lurlClothe = urlC
+            this.upload()
         }
     },
     watch: {

@@ -6,7 +6,7 @@
     </el-row>
 
     <el-row class="illustrate-row">
-        <el-col :span="12">
+        <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
             <div class="part1">
                 <p class="step">
                     <img src="../assets/picture1.png" class="picture1">
@@ -17,7 +17,7 @@
                 </p>
             </div>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="0" :sm="12" :md="12" :lg="12" :xl="12">
             <div class="part1">
                 <p class="step">
                     <img src="../assets/picture2.png" class="picture1">
