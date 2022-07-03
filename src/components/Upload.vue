@@ -39,19 +39,21 @@ export default {
 
             this.startWaiting()
             let fdata = new FormData()
-            fdata.append("file", this.dataURLtoBlob(this.lurlPeople), "People.jpg")
-            fdata.append("file", this.dataURLtoBlob(this.lurlClothe), "Clothe.jpg")
+            fdata.append("img_1", this.dataURLtoBlob(this.lurlPeople), "People.jpg")
+            fdata.append("img_2", this.dataURLtoBlob(this.lurlClothe), "Clothe.jpg")
 
             this.axios({
                 method: 'POST',
-                url: 'http://127.0.0.1:9099/upload',
+                url: 'http://47.103.71.46:80/get_image/getImage/',
                 data: fdata,   //参数
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
             }).then(resp => {
                 let response = resp.data;
+                let arr = JSON.parse(response)
                 this.result = response
+                console.log(arr.file_content)
                 this.stopWaiting()
                 this.showResult()
                 console.log(response)
