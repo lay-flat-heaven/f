@@ -11,7 +11,7 @@
 
 export default {
     name: 'Upload',
-    props: ['urlPeople', 'urlClothe', 'canUpload', 'testupload'],
+    props: ['urlPeople', 'urlClothe', 'canUpload'],
     data() {
         return {
             lurlPeople: '',
@@ -19,7 +19,8 @@ export default {
             url: require('../assets/logo.png'),
             thisUpload: this.canUpload,
             result: '',
-            haveResult: false
+            haveResult: false,
+            isWaiting: false,
         }
     },
     methods: {
@@ -35,6 +36,8 @@ export default {
             return new Blob([u8arr], { type: mime });
         },
         upload() {
+
+            this.startWaiting()
             let fdata = new FormData()
             fdata.append("file", this.dataURLtoBlob(this.lurlPeople), "People.jpg")
             fdata.append("file", this.dataURLtoBlob(this.lurlClothe), "Clothe.jpg")
@@ -49,7 +52,8 @@ export default {
             }).then(resp => {
                 let response = resp.data;
                 this.result = response
-                setTimeout(this.showResult, 1000)
+                this.stopWaiting()
+                this.showResult()
                 console.log(response)
             }).catch(err => {
                 console.log(err);
@@ -58,6 +62,13 @@ export default {
         },
         showResult() {
             this.haveResult = true
+        },
+        startWaiting() {
+            this.$emit("wait", true)
+
+        },
+        stopWaiting() {
+            this.$emit("wait", false)
         }
     },
     watch: {
@@ -78,13 +89,6 @@ export default {
                 }
             }
         },
-        testupload: function (newData, oldData) {
-            if (newData == true) {
-                this.result = this.url
-                setTimeout(this.showResult, 1000)
-
-            }
-        }
     }
 }
 </script>

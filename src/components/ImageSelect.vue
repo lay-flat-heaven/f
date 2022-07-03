@@ -1,5 +1,5 @@
 <template>
-    <el-card  class="card" :style="cardStyle" :body-style="{ padding: '0px' }" :shadow="isShadow">
+    <el-card class="card" :style="cardStyle" :body-style="{ padding: '0px' }" :shadow="isShadow">
         <el-image :style="imageStyle" class="box" :src="valueUrl" :fit="fit" :preview-src-list="srcList">
         </el-image>
         <div>
@@ -27,7 +27,7 @@ export default {
     },
     data() {
         return {
-            isShadow:"always",
+            isShadow: "always",
             mobile: this.isMobile,
             width: this.pwidth,
             height: this.pheight,
@@ -134,9 +134,9 @@ export default {
                 '--card-width': this.width + 'px'
             }
         },
-        buttonStyle(){
+        buttonStyle() {
             return {
-                '--button-height':this.height /32 *5 +'px'
+                '--button-height': this.height / 32 * 5 + 'px'
             }
         }
     }
@@ -167,5 +167,4 @@ export default {
     background-color: rgb(152, 47, 45);
     color: white;
 }
-
 </style>
