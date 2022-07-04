@@ -12,7 +12,7 @@
       <div class="drop-list">
         <el-dropdown>
           <span class="el-dropdown-link">
-            Dropdown List▾
+            About us▾
             <el-icon class="el-icon--right">
               <!-- <arrow-down /> -->
             </el-icon>

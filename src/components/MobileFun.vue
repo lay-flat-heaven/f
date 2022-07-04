@@ -15,7 +15,7 @@
                         :canUpload="prepareUpload">
                     </upload>
                 </el-card>
-                <el-button @click="uploadNow">aaa</el-button>
+                <el-button @click="uploadNow" style="width:75%;height: 40px;">upload</el-button>
             </div>
         </transition>
     </div>
