@@ -1,9 +1,27 @@
 <template>
     <transition name="el-zoom-in-center">
         <el-card class="win-fun-card" :body-style="{ padding: '0px' }" v-show="show">
-            <div class="option-bar">select pic below</div>
+            <div class="option-bar">
+                <div class="option-icon">
+                    <el-icon :size="22" style="padding-top:15px;position: relative;left: 14px;">
+                        <QuestionFilled />
+                    </el-icon>
+                </div>
+                <div class="option-text">
+                    <div class="option-content">Help</div>
+                </div>
+            </div>
             <el-divider :border-style="{ margin: '0px' }"></el-divider>
-            <div class="select-pic-bar">select pic below</div>
+            <div class="select-pic-bar">
+                <div class="option-icon">
+                    <el-icon :size="22" style="padding-top:15px;position: relative;left: 14px;">
+                        <DocumentAdd />
+                    </el-icon>
+                </div>
+                <div class="option-text">
+                    <div class="option-content">Select&Crop</div>
+                </div>
+            </div>
             <el-row v-loading="isLoading" class="pic-row">
                 <image-select :isMobile="false" :pheight="240" :pwidth="180" @transUrl="setUrlPeople"></image-select>
                 <upload :urlPeople="aboveUrlPeople" :urlClothe="aboveUrlClothe" :canUpload="startUpload"
@@ -18,7 +36,9 @@
                     <el-step title="Success" :icon="Picture" />
                 </el-steps>
             </div>
-            <el-button @click="uploadImg">upload</el-button>
+            <div class="upload-box">
+                <el-button class="upload-button" size="large" @click="uploadImg">upload</el-button>
+            </div>
             <!-- <el-progress :percentage="100" status="" :indeterminate="true" :duration="5" :stroke-width="18" :show-text="false"
              :stroke-linecap="square"/> -->
 
@@ -106,6 +126,15 @@ export default {
 </script>
 
 <style>
+.upload-box {
+    height: 45px
+}
+
+.upload-button {
+    position: relative;
+    top: 3px;
+}
+
 .pic-row {
     min-height: 300px;
 }
@@ -136,11 +165,39 @@ export default {
     margin: auto
 }
 
+.option-icon {
+    display: inline;
+    position: relative;
+    float: left;
+    width: 75px;
+    height: 100%;
+}
+
+.option-text {
+    display: inline;
+    position: relative;
+    text-align: left;
+    float: left;
+    width: 150px;
+    height: 100%;
+}
+
+.option-content {
+    position: relative;
+    padding-top: 15px;
+
+    font-size: 15px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:rgb(90, 90,90)
+}
+
+
 .option-bar {
     background-color: white;
     position: relative;
     width: 100%;
-    height: 55px
+    height: 50px
 }
 
 .select-pic-bar {

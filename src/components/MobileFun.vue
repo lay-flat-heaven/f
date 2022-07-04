@@ -1,5 +1,7 @@
 <template>
     <div class="mobile-fun-box" @touchstart="start" @touchmove="move" @touchend="end">
+    <el-button @click="currentPage++"></el-button>
+     <el-button @click="currentPage--"></el-button>
         <transition :name="slideDirection" mode="out-in" @before-enter="test">
             <div v-if="currentPage == 1" :key="1">
                 <image-select :isMobile="true" :pheight="320" :pwidth="240" @transUrl="setUrlPeople"></image-select>
